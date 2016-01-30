@@ -1,0 +1,108 @@
+@keyframes show{
+  100%{
+    transform:scale(1,1);
+    opacity: 1;
+  }
+  0%{
+    trandform:scale(0,0);
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0%{
+    transform:scale(1,1);
+    opacity: 1;
+  }
+ 100%{
+   trandform:scale(0,0);
+   opacity: 0;
+  }
+}
+*[data-role=animate-hide]{
+  animation:hide 1s ease forwards;
+  transform-origin:left top ;
+}
+*[data-role=animate-show]{
+  animation:show 1s ease forwards;
+  transform-origin:left top ;
+}
+
+
+@keyframes down{
+  100%{
+    transform:scale(1,1);
+    opacity: 1;
+  }
+  0%{
+    trandform:scale(0,0);
+    opacity: 0;
+  }
+}
+@keyframes up{
+  0%{
+    transform:scale(1,1);
+    opacity: 1;
+  }
+  100%{
+    trandform:scale(0,0);
+    opacity: 0;
+  }
+}
+*[data-role=animate-hide]{
+  animation:hide 1s ease forwards;
+  transform-origin:left top ;
+}
+*[data-role=animate-show]{
+  animation:show 1s ease forwards;
+  transform-origin:left top ;
+}
+@r:30;
+@a:0;
+@p:10;
+@num:360/@p;
+.round(@i:0) when (@i<=@num){
+  @select:100/@num*@i*1%;
+  @a:@i*@p;
+  @{select}{
+    transform:translate(cos(@a*pi()/180)*@r*1px,sin(@a*pi()/180)*@r*1px);
+  }
+  .round(@i+1);
+}
+@keyframes round{
+  .round();
+}
+*[data-a*=animate-round]{
+  animation:round 2s linear infinite;
+}
+
+@r:30;
+@r1:10;
+@a:0;
+@a1:0;
+@p:10;
+@p1:50;
+@num:360/@p;
+.round1(@i:0) when (@i<=@num){
+  @select:100/@num*@i*1%;
+  @a1:@i*@p1;
+  @a:@i*@p;
+  @{select}{
+    transform:translate(cos(@a*pi()/180)*@r*1px,sin(@a1*pi()/180)*@r1*1px);
+  }
+  .round1(@i+1);
+}
+@keyframes quxian{
+  .round1();
+}
+*[data-a*=animate-quxian]{
+  animation:quxian 2s linear infinite;
+}
+
+
+@keyframes yuan{
+0%{}
+100%{}
+}
+*[data-a*=animate-quxian]{
+  animation:quxian 2s linear infinite;
+}
